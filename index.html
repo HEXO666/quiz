@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz — La Boîte à Merveilles | Chapitre I</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated background particles -->
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Landing Page -->
+    <section id="landing" class="screen active">
+        <div class="landing-content">
+            <div class="book-icon">📖</div>
+            <h1 class="title-main">La Boîte à Merveilles</h1>
+            <p class="title-author">Ahmed Sefrioui</p>
+            <div class="chapter-badge">Chapitre I</div>
+            <p class="title-desc">Testez vos connaissances sur le premier chapitre du roman autobiographique d'Ahmed Sefrioui. Plongez dans l'univers de Dar Chouafa, le Msid, et les souvenirs d'enfance du narrateur à Fès.</p>
+            <div class="quiz-meta">
+                <div class="meta-item">
+                    <span class="meta-icon">❓</span>
+                    <span>20 questions</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">⏱️</span>
+                    <span>~10 minutes</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">📝</span>
+                    <span>QCM</span>
+                </div>
+            </div>
+            <button class="btn-start" onclick="startQuiz()">
+                Commencer le Quiz
+                <span class="btn-arrow">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Quiz Page -->
+    <section id="quiz" class="screen">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <div class="progress-info">
+                    <span id="question-counter">Question 1 / 20</span>
+                    <span id="score-display">Score : 0</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="question-card" id="question-card">
+                <div class="question-number" id="question-number">01</div>
+                <h2 class="question-text" id="question-text"></h2>
+                <div class="options-grid" id="options-grid"></div>
+            </div>
+
+            <div class="quiz-footer">
+                <button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>
+                    Question suivante
+                    <span class="btn-arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Page -->
+    <section id="results" class="screen">
+        <div class="results-container">
+            <div class="results-icon" id="results-icon"></div>
+            <h2 class="results-title" id="results-title"></h2>
+            <div class="score-circle" id="score-circle">
+                <svg viewBox="0 0 200 200">
+                    <circle cx="100" cy="100" r="90" class="score-bg"/>
+                    <circle cx="100" cy="100" r="90" class="score-progress" id="score-progress"/>
+                </svg>
+                <div class="score-text" id="score-text"></div>
+            </div>
+            <p class="results-message" id="results-message"></p>
+            <div class="results-stats">
+                <div class="stat-item correct">
+                    <span class="stat-number" id="stat-correct">0</span>
+                    <span class="stat-label">Correctes</span>
+                </div>
+                <div class="stat-item wrong">
+                    <span class="stat-number" id="stat-wrong">0</span>
+                    <span class="stat-label">Incorrectes</span>
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <button class="btn-restart" onclick="restartQuiz()">
+                    🔄 Recommencer
+                </button>
+                <button class="btn-review" onclick="showReview()">
+                    📋 Voir les réponses
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Page -->
+    <section id="review" class="screen">
+        <div class="review-container">
+            <h2 class="review-title">📋 Révision des réponses</h2>
+            <div id="review-list"></div>
+            <button class="btn-restart" onclick="restartQuiz()" style="margin-top:2rem;">
+                🔄 Recommencer le Quiz
+            </button>
+        </div>
+    </section>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "la-boite-a-merveilles-quiz",
+  "version": "1.0.0",
+  "description": "Quiz interactif sur La Boîte à Merveilles - Chapitre I",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'"
+  }
+}
